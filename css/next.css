@@ -1,0 +1,242 @@
+#top {
+  height: 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #f5f5f5;
+}
+#top .contant {
+  width: 990px;
+}
+#top .contant .left {
+  position: relative;
+}
+#top .contant .left .logo {
+  position: relative;
+  margin-right: 20px;
+  z-index: 11;
+}
+#top .contant .left span a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+}
+#top .contant .left span:hover a {
+  display: block;
+}
+#top .contant .right {
+  position: relative;
+  display: flex;
+}
+#top .contant .right h3 {
+  position: relative;
+  color: #464646;
+  font-size: 14px;
+  line-height: 40px;
+  font-weight: normal;
+}
+#top .contant .right h3.text1 {
+  margin-right: 20px;
+  padding-left: 30px;
+}
+#top .contant .right h3.text1::before {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  content: '';
+  width: 30px;
+  height: 30px;
+  background: url(../asster/img/24.png) no-repeat -30px 0;
+}
+#top .contant .right h3.text1 a:hover {
+  color: #ff4e00;
+}
+#top .contant .right h3.text2 {
+  padding-right: 30px;
+  cursor: pointer;
+}
+#top .contant .right h3.text2 iframe {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  width: 708px;
+  height: 582px;
+  display: none;
+  z-index: 11;
+}
+#top .contant .right h3.text2::after {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  content: '';
+  width: 30px;
+  height: 30px;
+  background: url(../asster/img/24.png);
+  transform: rotate(90deg);
+  opacity: 0.1;
+}
+#top .contant .right h3.text2:hover iframe {
+  display: block;
+}
+#nav {
+  position: relative;
+  height: 130px;
+  background: url(../asster/img/46.png) no-repeat center;
+  z-index: 9;
+}
+#nav .contant {
+  width: 1200px;
+}
+#nav .contant .title {
+  display: flex;
+}
+#nav .contant .title a {
+  margin: 4px 20px 0 0;
+}
+#nav .contant .title h1 {
+  position: relative;
+  float: left;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: bold;
+  color: #ffb400;
+  margin-top: 24px;
+}
+#nav .contant .title h1 span {
+  display: block;
+  font-size: 14px;
+  color: #fff;
+  line-height: 20px;
+  font-weight: normal;
+}
+#nav .contant ul {
+  display: flex;
+  height: 100px;
+}
+#nav .contant ul li a {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+}
+#nav .contant ul li a:hover {
+  color: #ffba00;
+  background: url(../asster/img/25.png) no-repeat 0 -48px;
+}
+#nav .contant ul li a.banner {
+  color: #ffba00;
+  text-decoration: underline;
+  background: none;
+}
+#set {
+  position: relative;
+  height: 920px;
+  background: url(../asster/img/52.png) no-repeat center bottom;
+  margin-top: -30px;
+  z-index: 8;
+}
+#set .contant {
+  position: relative;
+  height: 890px;
+  background: url(../asster/img/17.jpg) top center no-repeat;
+}
+#set .contant .btn {
+  position: absolute;
+  top: 10px;
+  right: 8%;
+  width: 232px;
+  height: 78px;
+  background: url(../asster/img/48.png) no-repeat center;
+  text-indent: -99999px;
+  overflow: hidden;
+}
+#set .contant .video {
+  position: relative;
+  top: 654px;
+  display: flex;
+  width: 100%;
+  height: 163px;
+  justify-content: center;
+}
+#set .contant .video .play {
+  position: relative;
+  width: 283px;
+  height: 163px;
+  background: url(../asster/img/49.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#set .contant .video .play:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 61px;
+  height: 61px;
+  margin: -30px 0 0 -30px;
+  background: url(../asster/img/23.png);
+  cursor: pointer;
+  animation: bre 1s linear infinite alternate;
+}
+@keyframes bre {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+#set .contant .video .erweima {
+  width: 156px;
+  height: 156px;
+  margin: 0 15px;
+}
+#set .contant .video .down {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  width: 229px;
+  height: 156px;
+}
+.shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 19;
+  display: none;
+}
+.shadow .dilog {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 1063px;
+  height: 608px;
+  padding: 9px 8px;
+  background: url(../asster/img/2.png);
+  box-sizing: border-box;
+  margin: auto;
+  z-index: 20;
+  display: none;
+}
+.shadow .dilog .mvvm {
+  height: 588px;
+  overflow: hidden;
+}
+.shadow .dilog .close {
+  position: absolute;
+  top: 7px;
+  right: -102px;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+  background: url(../asster/img/3.png) no-repeat;
+}
