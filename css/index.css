@@ -1,9 +1,11 @@
 body,
+html,
 p,
 h1,
 h2,
 h3 {
   margin: 0;
+  padding: 0;
 }
 ul {
   margin: 0;
@@ -11,11 +13,8 @@ ul {
   list-style: none;
 }
 a {
-  color: inherit;
+  color: #464646;
   text-decoration: none;
-}
-i {
-  font-size: normal;
 }
 img {
   vertical-align: middle;
@@ -24,31 +23,18 @@ input,
 button {
   margin: 0;
   padding: 0;
-  cursor: pointer;
 }
 button {
   border: none;
+  background: none;
   outline: none;
+  cursor: pointer;
 }
-body {
+body,
+html {
+  width: 100%;
   font: 14px/1.5 '\5FAE\8F6F\96C5\9ED1';
 }
-.contant {
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-.xin:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-.fl {
-  float: left;
-}
-.fr {
-  float: right;
-}
-.box {
-  max-width: 100%;
+.min {
+  min-width: 100rem;
 }
