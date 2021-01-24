@@ -312,7 +312,6 @@
 }
 #set2 .wrap ul {
   display: flex;
-  width: 6000px;
 }
 #set2:after {
   background-image: url(../asster/img/shuijing.png);
@@ -422,6 +421,62 @@
 #set6 h2 {
   background-image: url(../asster/img/xi.png);
 }
+#set6 ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+#set6 ul li {
+  display: flex;
+  margin: 0 5px;
+}
+#set6 ul li h3 {
+  width: 92px;
+  height: 510px;
+  font-weight: normal;
+  background: url(../asster/img/image.png) no-repeat -142px -389px;
+  color: #bcbcbc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#set6 ul li h3 p {
+  width: 32px;
+  font-size: 32px;
+  line-height: 32px;
+}
+#set6 ul li div {
+  width: 545px;
+  height: 510px;
+  background: url(../asster/img/box.png) no-repeat top center / 100% 100%;
+  overflow: hidden;
+  width: 0;
+  opacity: 0;
+  transition: 0.7s ease-out;
+  padding-top: 60px;
+  box-sizing: border-box;
+}
+#set6 ul li div p {
+  width: 495px;
+  height: 390px;
+  padding: 0 25px 0;
+  padding-right: 8px;
+  font-size: 20px;
+  color: #c7c7c7;
+  line-height: 38px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+#set6 ul li.active h3 {
+  color: #875d00;
+  background-position: -24px -389px;
+  margin-right: 10px;
+}
+#set6 ul li.active div {
+  width: 545px;
+  opacity: 1;
+}
 #set6:after {
   background-image: url(../asster/img/dashui.png);
 }
@@ -431,6 +486,49 @@
 }
 #set7 h2 {
   background-image: url(../asster/img/te.png);
+}
+#set7 .wrap ul {
+  position: relative;
+  width: 1000px;
+  height: 495px;
+  margin: 0 auto;
+}
+#set7 .wrap ul li {
+  position: absolute;
+  width: 858px;
+  height: 495px;
+}
+#set7 .wrap ul li img {
+  width: 100%;
+  height: 100%;
+}
+#set7 .wrap ul li:nth-child(1) {
+  left: 0;
+  opacity: 0.5;
+  z-index: 2;
+  transform: scale(0.8);
+  transform-origin: left;
+}
+#set7 .wrap ul li:nth-child(2) {
+  left: 50%;
+  z-index: 3;
+  transform: translateX(-50%);
+}
+#set7 .wrap ul li:nth-child(3) {
+  right: 0;
+  opacity: 0.5;
+  z-index: 2;
+  transform: scale(0.8);
+  transform-origin: right;
+}
+#set7 .wrap ul li:nth-child(n+4) {
+  left: 50%;
+  opacity: 0.5;
+  z-index: 1;
+  transform: translateX(-50%) scale(0.8);
+}
+#set7 .circle {
+  margin-top: 50px;
 }
 #set7:after {
   background-image: url(../asster/img/an.png);
@@ -599,4 +697,49 @@
   height: 75px;
   cursor: pointer;
   background: url(../asster/img/cha.png) no-repeat;
+}
+.foot-nav {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  width: 150px;
+  z-index: 8;
+  transform: translateY(-50%);
+}
+.foot-nav li {
+  position: relative;
+  width: 100%;
+  height: 54px;
+  font-size: 12px;
+  padding: 34px 0 0 26px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.foot-nav li a {
+  display: block;
+  width: 100%;
+  color: #fff;
+}
+.foot-nav li:hover a,
+.foot-nav li.no a {
+  color: #ffbf05;
+}
+.foot-nav li:hover:after,
+.foot-nav li.no:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background: url(../asster/img/image.png) no-repeat -345px -342px;
+}
+.foot-nav li:nth-child(n+2):before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 68px;
+  width: 1px;
+  height: 26px;
+  background: url(../asster/img/image.png) no-repeat -391px -257px;
 }

@@ -318,6 +318,7 @@
     //     background:url(../asster/img/70.png);
     // }
 }
+
 #set2{
     z-index: 6;
     background: url(../asster/img/shuijing.jpg) no-repeat center top;
@@ -330,7 +331,7 @@
         overflow: hidden;
         ul{
             display: flex;
-            width:6000px;
+            // width:6000px;
         }
     }
     &:after{
@@ -443,6 +444,64 @@
     h2{
         background-image:url(../asster/img/xi.png);
     }
+    ul{
+        display: flex;
+        justify-content: center;
+        margin-top:80px;
+        li{
+            display: flex;
+            margin:0 5px;
+            h3{
+                width:92px;
+                height:510px;
+                font-weight:normal;
+                background: url(../asster/img/image.png) no-repeat -142px -389px;
+                color:#bcbcbc;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                cursor:pointer;
+                p{
+                    width:32px;
+                    font-size:32px;
+                    line-height:32px;
+                }
+            }
+            div{
+                width:545px;
+                height:510px;
+                background:url(../asster/img/box.png) no-repeat top center/100% 100%;
+                overflow:hidden;
+                width:0;
+                opacity: 0;
+                transition:.7s ease-out;//速度从快到慢
+                padding-top:60px;
+                box-sizing:border-box;
+                p{
+                    width:495px;
+                    height:390px;
+                    padding:0 25px 0;
+                    padding-right:8px;
+                    font-size:20px;
+                    color:#c7c7c7;
+                    line-height: 38px;
+                    overflow-y:auto;
+                    box-sizing:border-box;
+                }
+            }
+            &.active{
+                h3{
+                    color:#875d00;
+                    background-position: -24px -389px;
+                    margin-right:10px;
+                }
+                div{
+                    width:545px;
+                    opacity:1;
+                }
+            }
+        }
+    }
     &:after{
         background-image: url(../asster/img/dashui.png);
     }
@@ -452,6 +511,55 @@
     background:url(../asster/img/an.jpg) no-repeat center top;
     h2{
         background-image:url(../asster/img/te.png);
+    }
+    .wrap{
+        ul{
+            position:relative;
+            width:1000px;
+            height:495px;
+            margin:0 auto;
+            li{
+                position:absolute;
+                width:858px;
+                height:495px;
+                img{
+                    width:100%;
+                    height:100%;
+                }
+                &:nth-child(1){
+                    //左边的图
+                    left:0;
+                    opacity: .5;
+                    z-index:2;
+                    transform: scale(.8);
+                    transform-origin:left;
+                }
+                &:nth-child(2){
+                    //中间的图
+                    left:50%;
+                    z-index:3;
+                    transform:translateX(-50%);
+                }
+                &:nth-child(3){
+                    //左边的图
+                    right:0;
+                    opacity: .5;
+                    z-index:2;
+                    transform: scale(.8);
+                    transform-origin:right;
+                }
+                &:nth-child(n+4){
+                    //后边的图 第四个以后的图片
+                    left:50%;
+                    opacity: .5;
+                    z-index:1;
+                    transform: translateX(-50%) scale(.8);
+                }
+            }
+        }
+    }
+    .circle{
+        margin-top:50px;
     }
     &:after{
         background-image:url(../asster/img/an.png);
@@ -632,5 +740,54 @@
             cursor:pointer;
             background:url(../asster/img/cha.png) no-repeat;
         }
+    }
+}
+//旁边
+.foot-nav{
+    position:fixed;
+    top:50%;
+    right:0;
+    width:150px;
+    z-index:8;
+    transform: translateY(-50%);
+    li{
+        position:relative;
+        width:100%;
+        height:54px;
+        font-size:12px;
+        padding:34px 0 0 26px;
+        box-sizing:border-box;
+        cursor:pointer;
+        a{
+            display: block;
+            width:100%;
+            color:#fff;
+        }
+        &:hover,&.no{
+            a{
+                color:#ffbf05;
+            }
+            &:after{
+                content:'';
+                position:absolute;
+                left:0;
+                bottom:0;
+                width:20px;
+                height:20px;
+                background:url(../asster/img/image.png) no-repeat -345px -342px;
+            }
+        }
+        &:nth-child(n+2){
+            &:before{
+                content: '';
+                position: absolute;
+                top: 4px;
+                left: 68px;
+                width: 1px;
+                height: 26px;
+                background: url(../asster/img/image.png) no-repeat -391px -257px;
+            }
+        }
+            
     }
 }
