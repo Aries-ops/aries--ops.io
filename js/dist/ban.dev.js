@@ -48,7 +48,7 @@
       show(this.index);
     };
   }
-})(); // 轮播图
+})(); // 无缝轮播图
 
 
 (function () {
@@ -58,23 +58,33 @@
         left = document.querySelector(id + " .left"),
         right = document.querySelector(id + " .right"),
         pan = document.querySelectorAll(id + " .circle span");
-    boxWidth = list.offsetWidth; // console.log(list,left,right,pan,ul);
-
+    boxWidth = list.offsetWidth;
     ul.innerHTML += ul.innerHTML;
     var len = ul.children.length;
     ul.style.width = len * boxWidth + 'px';
     ul.style.transform = 'translateX(0px)';
-    var cn = 0; //当前索引值
+    var can = true;
+    var then = null;
+    var cn = 0; //li当前索引值
 
-    var hn = 0;
-    var ln = 0;
+    var ln = 0; //span当前索引值
+    // 向右移动
 
     right.onclick = function () {
+      if (!can) {
+        return; //条件成立说明现在图片正在走！！
+      }
+
       cn++;
       move();
-    };
+    }; // 向左移动
+
 
     left.onclick = function () {
+      if (!can) {
+        return;
+      }
+
       if (cn == 0) {
         cn = len / 2;
         ul.style.transition = null;
@@ -85,12 +95,31 @@
         cn--;
         move();
       }, 13);
-    };
+    }; //圆点点击
+
+
+    for (var i = 0; i < pan.length; i++) {
+      pan[i].index = i;
+
+      pan[i].onclick = function () {
+        if (!can) {
+          return;
+        }
+
+        cn = this.index;
+        move();
+      };
+    } // 自动滚动
+
+
+    then = setInterval(right.onclick, 3000);
 
     function move() {
+      can = false;
       ul.style.transition = '.3s';
       ul.style.transform = 'translateX(' + -cn * boxWidth + 'px)';
-      var hn = cn % (len / 2);
+      var hn = cn % (len / 2); //圆点对应的索引值
+
       pan[ln].className = '';
       pan[hn].className = 'active';
       ln = hn;
@@ -102,6 +131,8 @@
         ul.style.transition = null;
         ul.style.transform = 'translate(0)';
       }
+
+      can = true;
     });
   }
 
@@ -111,9 +142,9 @@
 
 
 (function () {
-  var banne = document.getElementById("set3"),
-      botto = document.getElementsByClassName("bottom"),
-      li = banne.querySelectorAll("#set3 li"); // console.log(banne,botto,li);
+  var ban = document.getElementById("set3"),
+      boot = document.getElementsByClassName("bottom")[0],
+      li = ban.querySelectorAll("#set3 li"); // console.log(banne,botto,li);
 
   for (var i = 0; i < li.length; i++) {
     li[i].index = i;
@@ -124,8 +155,8 @@
       }
 
       this.classList.add('active');
-      banne.style.background = 'url(asster/img/set3-' + (this.index + 1) + '.png) no-repeat center top';
-      botto.style.background = 'url(asster/img/bottom' + (this.index + 1) + '.png) no-repeat center top';
+      ban.style.background = 'url(asster/img/set3-' + (this.index + 1) + '.jpg) no-repeat center top';
+      boot.style.background = 'url(asster/img/bottom' + (this.index + 1) + '.png) no-repeat center top';
     };
   }
 })(); //手风琴
@@ -145,4 +176,39 @@
       this.classList.add('active');
     };
   }
+})(); // 不规则轮播图
+
+
+(function () {
+  var ul = document.querySelector("#set7 ul"),
+      lis = ul.children,
+      left = document.querySelector("#set7 .left"),
+      right = document.querySelector("#set7 .right"),
+      pan = document.querySelectorAll("#set7 .circle span"),
+      cn = 0,
+      ln = 0;
+
+  right.onclick = function () {
+    cn++;
+    cn %= lis.length;
+    ul.appendChild(lis[0]); //可向节点的子节点列表的末尾添加新的子节点。
+
+    pan[ln].className = "";
+    pan[cn].className = "active";
+    ln = cn;
+  };
+
+  left.onclick = function () {
+    cn--;
+
+    if (cn < 0) {
+      cn = lis.length - 1;
+    }
+
+    ul.insertBefore(lis[lis.length - 1], lis[0]); //可在已有的子节点前插入一个新的子节点。
+
+    pan[ln].className = "";
+    pan[cn].className = "active";
+    ln = cn;
+  };
 })();

@@ -324,7 +324,7 @@
   background-image: url(../asster/img/chang.png);
 }
 #set3 .bottom {
-  background: url(../asster/img/bottom1.png) no-repeat center;
+  background-image: url(../asster/img/bottom1.png);
 }
 #set3 ul {
   position: absolute;
@@ -368,7 +368,6 @@
 }
 #set4 .wrap ul {
   display: flex;
-  width: 2400px;
 }
 #set4:after {
   background-image: url(../asster/img/qiang.png);
@@ -492,11 +491,13 @@
   width: 1000px;
   height: 495px;
   margin: 0 auto;
+  overflow: hidden;
 }
 #set7 .wrap ul li {
   position: absolute;
-  width: 858px;
+  width: 800px;
   height: 495px;
+  transition: 0.3s;
 }
 #set7 .wrap ul li img {
   width: 100%;
@@ -529,6 +530,12 @@
 }
 #set7 .circle {
   margin-top: 50px;
+}
+#set7 .left {
+  margin-left: 100px;
+}
+#set7 .right {
+  margin-right: 100px;
 }
 #set7:after {
   background-image: url(../asster/img/an.png);
