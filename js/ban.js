@@ -75,11 +75,6 @@
                 cn--;
                 move();
             },13)
-            setInterval(function() {
-                
-                cn--;
-                move();
-            },1);
             
         }
 
